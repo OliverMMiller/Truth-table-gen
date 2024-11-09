@@ -1,7 +1,6 @@
 import csv
-with open('TruthTable.csv', 'w', newline='') as csvfile:
-    myCSVWriter = csv.writer(csvfile, delimiter=' ',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+with open('TruthTable.csv', 'w', newline='') as TruthTable:
+    myCSVWriter = csv.writer(TruthTable, delimiter=',')
     myInputs = ["enable","open 1","close 1","open 2","close 2","PS1","10s timer out","counter >10","RS"]
     numInputs = len(myInputs) + 1
     header = myInputs + ["","buzzer","oper hatch","close hatch","10s timer reset","increment counter","pliot light"]
@@ -36,4 +35,4 @@ with open('TruthTable.csv', 'w', newline='') as csvfile:
         thisrow.append(thisrow[7] * -1 + 1)
         myCSVWriter.writerow(thisrow)
         i += 1
-        print(i)
+        # print(i)
